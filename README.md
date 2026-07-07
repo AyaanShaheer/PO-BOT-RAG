@@ -27,6 +27,9 @@ It is designed as a portfolio-quality AI Engineering project demonstrating:
 
 ## Architecture
 
+<img width="1536" height="1024" alt="ChatGPT Image Jul 7, 2026, 08_40_53 AM" src="https://github.com/user-attachments/assets/aff55bd1-1876-438a-8b93-0e7fac547fe4" />
+
+
 User Query  
 → Language Detection  
 → Query Expansion  
@@ -67,7 +70,7 @@ embeddings/    cached embeddings
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/AyaanShaheer/PO-BOT-RAG
 cd rag-chatbot
 ```
 
