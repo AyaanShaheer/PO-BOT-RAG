@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  pobot:
+    build:
+      context: .
+      target: runtime
+    image: pobot-rag:latest
+    container_name: pobot_rag
+    env_file:
+      - .env
+    environment:
+      - APP_ENV=${APP_ENV:-dev}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      # Persist ingested data, embeddings, and indexes across restarts
+      - ./data:/app/data
+      - ./embeddings:/app/embeddings
+      - ./indexes:/app/indexes
+      - ./logs:/app/logs
+    stdin_open: true      # required for interactive CLI
+    tty: true
+    restart: "no"
+
+  pobot-ingest:
+    # Separate one-shot service for ingestion pipeline
+    build:
+      context: .
+      target: runtime
+    image: pobot-rag:latest
+    container_name: pobot_ingest
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./embeddings:/app/embeddings
+      - ./indexes:/app/indexes
+      - ./logs:/app/logs
+    command: ["ingest"]
+    restart: "no"
+
+  pobot-benchmark:
+    build:
+      context: .
+      target: runtime
+    image: pobot-rag:latest
+    container_name: pobot_benchmark
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./embeddings:/app/embeddings
+      - ./indexes:/app/indexes
+      - ./logs:/app/logs
+    command: ["benchmark"]
+    restart: "no"

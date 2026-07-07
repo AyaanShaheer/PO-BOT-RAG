@@ -1,0 +1,65 @@
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ── Virtual environments ──────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Editors / OS ──────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Environment / secrets ─────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Logs ──────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Build / packaging ─────────────────────────────────────
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ── Runtime artifacts ─────────────────────────────────────
+data/raw/*
+data/cleaned/*
+data/processed/*
+!data/raw/.gitkeep
+!data/cleaned/.gitkeep
+!data/processed/.gitkeep
+
+embeddings/*
+!embeddings/.gitkeep
+
+indexes/faiss/*
+indexes/bm25/*
+!indexes/faiss/.gitkeep
+!indexes/bm25/.gitkeep
+
+# ── Benchmark outputs ─────────────────────────────────────
+data/benchmarks/benchmark_results.jsonl
+
+# ── Jupyter / notebooks ───────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Model / cache dirs ────────────────────────────────────
+.cache/
+huggingface/

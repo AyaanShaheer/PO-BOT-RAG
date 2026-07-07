@@ -1,0 +1,4 @@
+{"question":"What are annual leave rules?","expected_documents":["Employment Ordinance, Chapter 57","Employment Ordinance Publications"],"expected_keywords":["annual leave"],"language":"en"}
+{"question":"What rights do foreign domestic helpers have?","expected_documents":["Foreign Domestic Helpers Portal"],"expected_keywords":["domestic","helper"],"language":"en"}
+{"question":"How are employment agencies regulated?","expected_documents":["Employment Agencies Administration","Employment Agencies Portal"],"expected_keywords":["employment","agency"],"language":"en"}
+{"question":"What happens if wages are not paid on time?","expected_documents":["Employment Ordinance, Chapter 57","Employment Ordinance Publications"],"expected_keywords":["wages"],"language":"en"}
